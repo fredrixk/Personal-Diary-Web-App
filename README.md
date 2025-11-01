@@ -1,0 +1,145 @@
+# Personal Diary Web App
+
+A full-stack web application for personal diary entries with mood tracking and analytics. Built with React.js for the frontend and Node.js/Express with MongoDB for the backend.
+
+## Features
+
+- 🔐 User authentication (register/login) with JWT
+- 📝 Create, read, update, and delete diary entries
+- 😊 Mood tracking (Very Happy, Happy, Neutral, Sad, Very Sad)
+- 📊 Analytics dashboard with mood trends and statistics
+- 🏷️ Tag support for diary entries
+- 📅 Date-based entry organization
+
+## Tech Stack
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- JWT for authentication
+- bcryptjs for password hashing
+
+### Frontend
+- React.js
+- React Router for navigation
+- Axios for API calls
+- Recharts for data visualization
+- CSS3 for styling
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local installation or MongoDB Atlas)
+- npm or yarn
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+```bash
+cd backend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the backend directory:
+```env
+MONGODB_URI=mongodb://localhost:27017/personal-diary
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+PORT=5000
+```
+
+4. Start the backend server:
+```bash
+npm run dev
+```
+
+The backend server will run on `http://localhost:5000`
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the frontend directory (optional, defaults to localhost:5000):
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+4. Start the React development server:
+```bash
+npm start
+```
+
+The frontend will run on `http://localhost:3000`
+
+## Usage
+
+1. Register a new account or login with existing credentials
+2. Create your first diary entry from the Dashboard
+3. Track your mood for each entry
+4. View all your entries in the Entries page
+5. Check your mood trends and statistics in the Analytics page
+
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login user
+
+### Diary Entries
+- `GET /api/entries` - Get all entries for authenticated user
+- `GET /api/entries/:id` - Get single entry
+- `POST /api/entries` - Create new entry
+- `PUT /api/entries/:id` - Update entry
+- `DELETE /api/entries/:id` - Delete entry
+
+### Analytics
+- `GET /api/analytics/stats` - Get entry statistics
+- `GET /api/analytics/mood-distribution` - Get mood distribution
+- `GET /api/analytics/mood-trends?days=30` - Get mood trends over time
+
+## Project Structure
+
+```
+Personal Diary Web App/
+├── backend/
+│   ├── models/
+│   │   ├── User.js
+│   │   └── DiaryEntry.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── entries.js
+│   │   └── analytics.js
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── server.js
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── utils/
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+└── README.md
+```
+
+## License
+
+ISC
+
