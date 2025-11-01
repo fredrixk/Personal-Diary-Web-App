@@ -1,0 +1,18 @@
+{
+  "name": "personal-diary-app",
+  "version": "1.0.0",
+  "description": "Personal Diary Web App - Full Stack Application",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "dev-backend": "cd backend && npm run dev",
+    "dev-frontend": "cd frontend && npm start"
+  },
+  "keywords": ["diary", "journal", "mood-tracking", "railway"],
+  "author": "",
+  "license": "ISC"
+}
+

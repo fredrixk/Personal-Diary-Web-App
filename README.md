@@ -139,6 +139,28 @@ Personal Diary Web App/
 └── README.md
 ```
 
+## Deployment
+
+### Railway Deployment
+
+This app is configured for easy deployment on Railway. See [RAILWAY_DEPLOY.md](./RAILWAY_DEPLOY.md) for detailed deployment instructions.
+
+**Quick Deploy:**
+1. Push your code to GitHub
+2. Create a new Railway project
+3. Connect your GitHub repository
+4. Add MongoDB service in Railway
+5. Set environment variables:
+   - `MONGODB_URI` (from Railway MongoDB service)
+   - `JWT_SECRET` (generate a random secret)
+   - `NODE_ENV=production`
+6. Railway will automatically build and deploy your app
+
+The app is configured to:
+- Build the React frontend during deployment
+- Serve static files from the backend in production
+- Use relative API URLs for seamless integration
+
 ## License
 
 ISC
