@@ -141,21 +141,21 @@ Personal Diary Web App/
 
 ## Deployment
 
-### Production Deployment
+See [DEPLOY.md](./DEPLOY.md) for complete deployment instructions.
 
-See [VERCEL_DEPLOY.md](./VERCEL_DEPLOY.md) for complete deployment instructions.
+**Deploy Everything to Render:**
+1. Push code to GitHub
+2. Connect repository to Render
+3. Add MongoDB Atlas connection string
+4. Deploy!
 
-**Deployment Strategy:**
-- **Frontend**: Deploy React app to Vercel
-- **Backend**: Deploy Express API to Render  
-- **Database**: MongoDB Atlas (free tier available)
-
-**Benefits:**
-- ✅ Vercel's global CDN for fast frontend delivery
-- ✅ Render's reliable Node.js hosting for backend API
-- ✅ MongoDB Atlas for managed database
-- ✅ Free tiers available for all services
-- ✅ Automatic HTTPS and deployments
+**What Gets Deployed:**
+- ✅ Frontend (React app)
+- ✅ Backend (Express API)
+- ✅ Database (MongoDB Atlas)
+- ✅ All in one service on Render
+- ✅ Free tier available
+- ✅ Automatic HTTPS included
 
 ## License
 
