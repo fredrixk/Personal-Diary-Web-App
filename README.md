@@ -141,32 +141,21 @@ Personal Diary Web App/
 
 ## Deployment
 
-### Vercel Deployment (Recommended)
+### Production Deployment
 
-This app uses a split architecture deployment strategy. See [VERCEL_DEPLOY.md](./VERCEL_DEPLOY.md) for detailed deployment instructions.
+See [VERCEL_DEPLOY.md](./VERCEL_DEPLOY.md) for complete deployment instructions.
 
-**Quick Deploy:**
-1. Deploy backend to Render
-   - Create a Web Service on Render
-   - Set environment variables (MONGODB_URI, JWT_SECRET)
-   - Get your backend URL
+**Deployment Strategy:**
+- **Frontend**: Deploy React app to Vercel
+- **Backend**: Deploy Express API to Render  
+- **Database**: MongoDB Atlas (free tier available)
 
-2. Deploy frontend to Vercel
-   - Import your GitHub repository
-   - Set `REACT_APP_API_URL` to your Render backend URL
-   - Deploy
-
-3. Update backend CORS
-   - Add your Vercel URL to backend environment variables
-
-**Alternative: Full Render Deployment**
-See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) if you prefer to deploy everything on Render.
-
-**Architecture:**
-- Frontend: Vercel (React app)
-- Backend: Render (Express API)
-- Database: MongoDB Atlas (free tier available)
-- Benefits: Fast CDN, no sleep, easy updates
+**Benefits:**
+- ✅ Vercel's global CDN for fast frontend delivery
+- ✅ Render's reliable Node.js hosting for backend API
+- ✅ MongoDB Atlas for managed database
+- ✅ Free tiers available for all services
+- ✅ Automatic HTTPS and deployments
 
 ## License
 
