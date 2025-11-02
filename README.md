@@ -141,27 +141,32 @@ Personal Diary Web App/
 
 ## Deployment
 
-### Render Deployment
+### Vercel Deployment (Recommended)
 
-This app is configured for easy deployment on Render. See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) for detailed deployment instructions.
+This app uses a split architecture deployment strategy. See [VERCEL_DEPLOY.md](./VERCEL_DEPLOY.md) for detailed deployment instructions.
 
 **Quick Deploy:**
-1. Push your code to GitHub
-2. Create a new Web Service on Render
-3. Connect your GitHub repository
-4. Add MongoDB database in Render (or use Atlas)
-5. Set environment variables:
-   - `MONGODB_URI` (from MongoDB service)
-   - `JWT_SECRET` (generate a random secret)
-   - `NODE_ENV=production`
-   - `PORT=10000`
-6. Render will automatically build and deploy your app
+1. Deploy backend to Render
+   - Create a Web Service on Render
+   - Set environment variables (MONGODB_URI, JWT_SECRET)
+   - Get your backend URL
 
-The app is configured to:
-- Build the React frontend during deployment
-- Serve static files from the backend in production
-- Use relative API URLs for seamless integration
-- Work with Render's free tier
+2. Deploy frontend to Vercel
+   - Import your GitHub repository
+   - Set `REACT_APP_API_URL` to your Render backend URL
+   - Deploy
+
+3. Update backend CORS
+   - Add your Vercel URL to backend environment variables
+
+**Alternative: Full Render Deployment**
+See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) if you prefer to deploy everything on Render.
+
+**Architecture:**
+- Frontend: Vercel (React app)
+- Backend: Render (Express API)
+- Database: MongoDB Atlas (free tier available)
+- Benefits: Fast CDN, no sleep, easy updates
 
 ## License
 
