@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   BarChart,
   Bar,
@@ -24,11 +24,7 @@ const Analytics = () => {
   const [loading, setLoading] = useState(true);
   const [days, setDays] = useState(30);
 
-  useEffect(() => {
-    fetchAnalytics();
-  }, [days]);
-
-  const fetchAnalytics = async () => {
+  const fetchAnalytics = useCallback(async () => {
     try {
       const [statsRes, distributionRes, trendsRes] = await Promise.all([
         api.get('/analytics/stats'),
@@ -51,7 +47,11 @@ const Analytics = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [days]);
+
+  useEffect(() => {
+    fetchAnalytics();
+  }, [fetchAnalytics]);
 
   const COLORS = {
     'very-happy': '#4CAF50',

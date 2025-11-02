@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../utils/api';
 import './EntryForm.css';
@@ -18,13 +18,7 @@ const EntryForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (isEdit) {
-      fetchEntry();
-    }
-  }, [id, isEdit]);
-
-  const fetchEntry = async () => {
+  const fetchEntry = useCallback(async () => {
     try {
       const response = await api.get(`/entries/${id}`);
       const entry = response.data;
@@ -39,7 +33,13 @@ const EntryForm = () => {
       console.error('Error fetching entry:', error);
       setError('Failed to load entry');
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    if (isEdit) {
+      fetchEntry();
+    }
+  }, [isEdit, fetchEntry]);
 
   const handleChange = (e) => {
     setFormData({
