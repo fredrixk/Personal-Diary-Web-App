@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || process.env.RAILWAY_PUBLIC_DOMAIN || '*',
+  origin: process.env.FRONTEND_URL || '*',
   credentials: true
 };
 app.use(cors(corsOptions));

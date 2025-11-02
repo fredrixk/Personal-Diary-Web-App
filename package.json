@@ -11,7 +11,7 @@
     "dev-backend": "cd backend && npm run dev",
     "dev-frontend": "cd frontend && npm start"
   },
-  "keywords": ["diary", "journal", "mood-tracking", "railway"],
+  "keywords": ["diary", "journal", "mood-tracking", "render"],
   "author": "",
   "license": "ISC"
 }

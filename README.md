@@ -141,25 +141,27 @@ Personal Diary Web App/
 
 ## Deployment
 
-### Railway Deployment
+### Render Deployment
 
-This app is configured for easy deployment on Railway. See [RAILWAY_DEPLOY.md](./RAILWAY_DEPLOY.md) for detailed deployment instructions.
+This app is configured for easy deployment on Render. See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) for detailed deployment instructions.
 
 **Quick Deploy:**
 1. Push your code to GitHub
-2. Create a new Railway project
+2. Create a new Web Service on Render
 3. Connect your GitHub repository
-4. Add MongoDB service in Railway
+4. Add MongoDB database in Render (or use Atlas)
 5. Set environment variables:
-   - `MONGODB_URI` (from Railway MongoDB service)
+   - `MONGODB_URI` (from MongoDB service)
    - `JWT_SECRET` (generate a random secret)
    - `NODE_ENV=production`
-6. Railway will automatically build and deploy your app
+   - `PORT=10000`
+6. Render will automatically build and deploy your app
 
 The app is configured to:
 - Build the React frontend during deployment
 - Serve static files from the backend in production
 - Use relative API URLs for seamless integration
+- Work with Render's free tier
 
 ## License
 
